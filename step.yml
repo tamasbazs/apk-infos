@@ -1,0 +1,50 @@
+title: "APK info"
+summary: |-
+  APK Android info provider
+description: |-
+  Provides most common Android APK informations as package name, version name or version code.
+website: https://github.com/tamasbazs/bitrise-step-apk-info
+source_code_url: https://github.com/tamasbazs/bitrise-step-apk-info
+support_url: https://github.com/tamasbazs/bitrise-step-apk-info/issues
+project_type_tags:
+  - "android"
+  - "xamarin"
+  - "cordova"
+  - "ionic"
+  - "react-native"
+type_tags:
+  - artifact-info
+is_requires_admin_user: false
+is_always_run: false
+is_skippable: false
+toolkit:
+  go:
+    package_name: github.com/tamasbazs/steps-apk-info
+inputs:
+  - apk_path: "$BITRISE_APK_PATH"
+    opts:
+      title: "APK file path"
+      description: |
+        File path to APK file to get info from.
+      is_required: true
+outputs:
+  - ANDROID_APP_PACKAGE_NAME:
+    opts:
+      title: Android application package name
+      description: |-
+        Android application package name, ex. com.package.my
+  - ANDROID_APP_NAME:
+    opts:
+      title: Android application name
+      description: |-
+        Android application name from APK
+  - ANDROID_APP_VERSION_NAME:
+    opts:
+      title: Android application version name
+      description: |-
+        Android application version name from APK, ex. 1.0.0
+  - ANDROID_APP_VERSION_CODE:
+    opts:
+      title: Android application version code
+      description: |-
+        Android application version code from APK, ex. 10
